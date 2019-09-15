@@ -9,7 +9,7 @@ public class ConsumerApp {
     }
 
     private static void runConsumer() {
-        String topic = "topic2";
+        String topic = "stream-con";
         Consumer<Long, String> consumer = ConsumerCreator.createConsumer(topic);
         while (true) {
             ConsumerRecords<Long, String> consumerRecords = consumer.poll(1000);

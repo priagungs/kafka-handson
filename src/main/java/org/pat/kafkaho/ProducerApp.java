@@ -15,7 +15,7 @@ public class ProducerApp {
 
     private static void runProducer() {
         Scanner scanner = new Scanner(System.in);
-        String topic = "topic2";
+        String topic = "prod-stream";
         TopicCreator.createTopic(topic, 3);
         Producer<Long, String> producer = ProducerCreator.createProducer();
         while (true) {
