@@ -20,12 +20,7 @@ public class TopicCreator {
         AdminClient adminClient = AdminClient.create(properties);
         NewTopic newTopic = new NewTopic(topic, partition, (short)1); //new NewTopic(topicName, numPartitions, replicationFactor)
 
-        try {
-            adminClient.createTopics(Collections.singletonList(newTopic));
-            System.out.println(adminClient.listTopics().listings().get().iterator().next().name());
-        } catch (InterruptedException | ExecutionException e) {
-            e.printStackTrace();
-        }
+        adminClient.createTopics(Collections.singletonList(newTopic));
 
         adminClient.close();
     }

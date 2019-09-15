@@ -15,8 +15,8 @@ public class ProducerApp {
 
     private static void runProducer() {
         Scanner scanner = new Scanner(System.in);
-        String topic = "topichuyu";
-//        TopicCreator.createTopic(topic, 1);
+        String topic = "topic2";
+        TopicCreator.createTopic(topic, 3);
         Producer<Long, String> producer = ProducerCreator.createProducer();
         while (true) {
             String value = scanner.nextLine();
@@ -29,7 +29,6 @@ public class ProducerApp {
             } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
             }
-
         }
     }
 }
